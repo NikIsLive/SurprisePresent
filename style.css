@@ -1,0 +1,258 @@
+/* General body styling */
+body {
+    font-family: 'Pacifico', cursive;
+    background: linear-gradient(135deg, #ff6ec7, #ff9a8b); /* Gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Flower container for the flower shower */
+#flowerContainer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    width: 100%;
+}
+
+.flower {
+    position: absolute;
+    width: 60px; /* Size of the flower */
+    height: 60px;
+    opacity: 0;
+    animation: flowerShower 4s forwards linear;
+    z-index: 10;
+}
+
+@keyframes flowerShower {
+    0% {
+        transform: translateY(-100px) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Question text style */
+#question {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px; /* Space between question and buttons */
+}
+
+/* Buttons container: Ensure buttons are below the text */
+#continueButtonContainer {
+    display: flex;
+    justify-content: center; /* Horizontally align buttons */
+    align-items: center;
+    gap: 20px; /* Space between buttons */
+    flex-direction: column; /* Arrange buttons horizontally */
+}
+
+/* Button styles */
+#yesButton, #noButton {
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    width: 200px;
+}
+
+#yesButton {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0px 4px 15px rgba(76, 175, 80, 0.7);
+}
+
+#noButton {
+    background-color: #f44336;
+    color: white;
+    box-shadow: 0px 4px 15px rgba(244, 67, 54, 0.7);
+}
+
+#yesButton:hover {
+    transform: scale(1.1);
+    background-color: #45a049;
+}
+
+#noButton:hover {
+    transform: scale(1.1);
+    background-color: #e53935;
+}
+
+/* Style for the start button */
+#startButton {
+    padding: 20px 40px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #ff4081;
+    border: none;
+    color: white;
+    border-radius: 50px;
+    box-shadow: 0px 4px 15px rgba(255, 64, 129, 0.7);
+    transition: all 0.3s ease;
+    animation: buttonPulse 1s infinite; /* Pulsing animation */
+}
+
+@keyframes buttonPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#startButton:hover {
+    transform: scale(1.1);
+    background-color: #ff2b6e;
+}
+
+/* Adding a transition to buttons when displayed */
+#continueButtonContainer {
+    opacity: 0;
+    animation: fadeIn 1s forwards 2s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Fade-out animation */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Thank You Page Styling */
+#thankYouPage {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Left Half: Rose Image */
+#leftHalf {
+    width: 50%;
+    background-image: url('rose.png');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+/* Right Half: Gradient Background and Message */
+#rightHalf {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff9a8b, #f4c2c2);
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Thank You Text */
+#thankYouMessage {
+    font-size: 32px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Styling for the last page (Do you want to send your love to me?) */
+#newQuestionPage {
+    display: none; /* Initially hidden */
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #ff1493; /* Love pink color */
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Styling for the new question text */
+#newQuestionText {
+    font-size: 36px;
+    color: #ff1493; /* Vibrant pink color */
+    margin-bottom: 30px;
+}
+
+/* Buttons below the question */
+#yesButtonLove, #noButtonLove {
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    width: 200px;
+}
+
+#yesButtonLove {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0px 4px 15px rgba(76, 175, 80, 0.7);
+}
+
+#noButtonLove {
+    background-color: #f44336;
+    color: white;
+    box-shadow: 0px 4px 15px rgba(244, 67, 54, 0.7);
+}
+
+#yesButtonLove:hover {
+    transform: scale(1.1);
+    background-color: #45a049;
+}
+
+#noButtonLove:hover {
+    transform: scale(1.1);
+    background-color: #e53935;
+}
+
+/* Styling for the heart page after clicking Yes */
+#heartPage {
+    display: none; /* Initially hidden */
+    background: linear-gradient(135deg, #ff6eb1, #ff1493); /* Gradient love color */
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+#heartPage .heart {
+    font-size: 100px;
+    color: red;
+    margin-top: 20px;
+}

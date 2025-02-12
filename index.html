@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Shower</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="flowerContainer"></div> <!-- Flower shower effect container -->
+
+    <!-- First stage: Start Button -->
+    <button id="startButton" onclick="startFlowerShower()">Tap To Begin!!</button>
+
+    <!-- After flower shower: Continue question and buttons -->
+    <div id="continueButtonContainer" style="display: none;">
+        <p id="question">Do you want to continue?</p>
+        <div class="button-container">
+            <button id="yesButton" onclick="continueFun()">Yes</button>
+            <button id="noButton" onclick="dodgeNoButton()">No</button>
+        </div>
+    </div>
+
+    <!-- After clicking "Yes": New content displayed -->
+    <div id="thankYouPage" style="display: none;">
+        <div id="leftHalf">
+            <img src="rose.png" alt="Rose" id="roseImage">
+        </div>
+        <div id="rightHalf">
+            <p id="thankYouMessage">Thank you for coming into my life, I love you <3</p>
+        </div>
+    </div>
+    <!-- New Question Page -->
+<div id="newQuestionPage">
+    <div id="newQuestionText">
+        Do you want to send your love to me?
+    </div>
+    <div id="newButtons">
+        <button id="yesButtonLove" onclick="sendLove()">Yes</button>
+        <button id="noButtonLove" onclick="dodgeNoButtonForLove()">No</button>
+    </div>
+</div>
+
+<!-- Heart Page (only appears after clicking Yes) -->
+<div id="heartPage" style="display: none;">
+    <div>
+        Haan Haan pauch gya pyaar! Manti hi nhi ho ❤️
+    </div>
+    <div class="heart">
+        ❤️
+    </div>
+</div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
